@@ -1,13 +1,7 @@
 import cv2
-image_path = 'A1.jpg'
-image = cv2.imread(image_path)
-angle_degrees = 45
-height, width = image.shape[:2]
-center = (width // 2, height // 2)
-rotation_matrix = cv2.getRotationMatrix2D(center, angle_degrees, scale=1.0)
-rotated_clockwise = cv2.warpAffine(image, rotation_matrix, (width, height))
-rotated_counterclockwise = cv2.warpAffine(image, rotation_matrix, (width, height))
-cv2.imshow('Clockwise Rotated Image', rotated_clockwise)
-cv2.imshow('Counterclockwise Rotated Image', rotated_counterclockwise)
+path =r"C:\Users\AJAY TANGUTURI\Documents\CV\mickey.jpg"
+src = cv2.imread(path)
+window_name = 'Image'
+image = cv2.rotate(src, cv2.ROTATE_90_COUNTERCLOCKWISE)
+cv2.imshow(window_name, image)
 cv2.waitKey(0)
-cv2.destroyAllWindows()
